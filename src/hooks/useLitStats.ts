@@ -62,7 +62,7 @@ export function useLitStats(
   });
 
   const abortControllerRef = useRef<AbortController | null>(null);
-  const pollingTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const pollingTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const fetchData = useCallback(async (showLoading = true) => {
     // Cancel any in-flight request

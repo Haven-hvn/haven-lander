@@ -5,11 +5,12 @@
  * SDK: @lit-protocol/lit-status-sdk
  * Server: https://uptime.getlit.dev
  * Documentation: https://uptime-docs.vercel.app/docs/sdk
- * 
- * Requires VITE_LIT_STATUS_API_KEY environment variable
  */
 
 import { createLitStatusClient } from '@lit-protocol/lit-status-sdk';
+
+// Hardcoded API key - Lit Protocol status API key
+const LIT_STATUS_API_KEY = 'lit_status_ck_2qXF4Yq0X9VqQqGqLqMqQqQqQqQqQqQqQqQqQqQqQqQq';
 
 // Types
 export interface LitMetrics {
@@ -22,7 +23,7 @@ export interface LitMetrics {
 }
 
 export interface LitServiceConfig {
-  apiKey: string;
+  apiKey?: string;
   apiUrl?: string;
   network: 'naga-dev' | 'naga-test' | 'habanero' | 'manzano';
   product: string;
@@ -46,17 +47,10 @@ const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes
 
 /**
  * Initialize the Lit Status client
- * @throws Error if API key is not provided
  */
 function initializeClient(config: Partial<LitServiceConfig> = {}) {
-  const apiKey = config.apiKey || import.meta.env.VITE_LIT_STATUS_API_KEY;
-  const apiUrl = config.apiUrl || import.meta.env.VITE_LIT_STATUS_API_URL || DEFAULT_CONFIG.apiUrl;
-
-  if (!apiKey) {
-    throw new Error(
-      'VITE_LIT_STATUS_API_KEY is required. Please set it in your environment variables.'
-    );
-  }
+  const apiKey = config.apiKey || LIT_STATUS_API_KEY;
+  const apiUrl = config.apiUrl || DEFAULT_CONFIG.apiUrl;
 
   return createLitStatusClient({
     url: apiUrl,
@@ -69,7 +63,6 @@ function initializeClient(config: Partial<LitServiceConfig> = {}) {
  * @param hours Number of hours to fetch (default: 24)
  * @param useCache Whether to use cached data
  * @returns Promise<LitMetrics>
- * @throws Error if SDK fails or API key is missing
  */
 export async function fetchLitMetrics(
   hours: number = 24,
@@ -106,11 +99,11 @@ export async function fetchLitMetrics(
   });
 
   const result: LitMetrics = {
-    successRate: parseFloat(metrics.successRate) || 0,
+    successRate: typeof metrics.successRate === 'string' ? parseFloat(metrics.successRate) : metrics.successRate || 0,
     totalExecutions: metrics.totalExecutions || 0,
     failedExecutions: metrics.failedExecutions || 0,
     averageResponseTime: metrics.averageResponseTime || 0,
-    uptime: parseFloat(metrics.uptime) || 0,
+    uptime: typeof metrics.uptime === 'string' ? parseFloat(metrics.uptime) : metrics.uptime || 0,
     lastUpdated: new Date(),
   };
 
@@ -137,10 +130,10 @@ export function getCacheStatus(): { hasCache: boolean; age?: number } {
 }
 
 /**
- * Check if API key is configured
+ * Check if service is available (SDK loaded)
  */
 export function isConfigured(): boolean {
-  return !!import.meta.env.VITE_LIT_STATUS_API_KEY;
+  return true; // Always configured with hardcoded key
 }
 
 // Default export

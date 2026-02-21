@@ -209,7 +209,7 @@ export async function fetchFilecoinPayMetrics(
       totalFILLocked: filToken
         ? formatTokenValue(filToken.lockupCurrent, 18)
         : '0',
-      usdfcToken: usdfcToken,
+      usdfcToken: usdfcToken || null,
       activeStorageDeals,
       lastUpdated: new Date(),
     };

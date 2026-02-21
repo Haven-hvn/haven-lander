@@ -53,8 +53,8 @@ function initializeClient(config: Partial<LitServiceConfig> = {}) {
   const apiUrl = config.apiUrl || DEFAULT_CONFIG.apiUrl;
 
   return createLitStatusClient({
-    url: apiUrl,
-    apiKey,
+    url: apiUrl!,
+    apiKey: apiKey!,
   });
 }
 
@@ -98,12 +98,14 @@ export async function fetchLitMetrics(
     endDate,
   });
 
+  // Handle SDK response - metrics properties may vary
+  const m = metrics as any;
   const result: LitMetrics = {
-    successRate: typeof metrics.successRate === 'string' ? parseFloat(metrics.successRate) : metrics.successRate || 0,
-    totalExecutions: metrics.totalExecutions || 0,
-    failedExecutions: metrics.failedExecutions || 0,
-    averageResponseTime: metrics.averageResponseTime || 0,
-    uptime: typeof metrics.uptime === 'string' ? parseFloat(metrics.uptime) : metrics.uptime || 0,
+    successRate: typeof m.successRate === 'string' ? parseFloat(m.successRate) : (m.successRate || 0),
+    totalExecutions: m.totalExecutions || 0,
+    failedExecutions: m.failedExecutions || 0,
+    averageResponseTime: m.averageResponseTime || 0,
+    uptime: typeof m.uptime === 'string' ? parseFloat(m.uptime) : (m.uptime || 0),
     lastUpdated: new Date(),
   };
 

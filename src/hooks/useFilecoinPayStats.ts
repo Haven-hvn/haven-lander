@@ -95,9 +95,6 @@ export function useFilecoinPayStats(
       const errorMessage = err instanceof Error ? err.message : 'Unknown error';
       console.error('[useFilecoinPayStats] Fetch error:', errorMessage);
       
-      // Use mock data on error
-      const mockData = getMockData();
-      
       setState(prev => ({
         ...prev,
         isLoading: false,

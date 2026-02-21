@@ -1,0 +1,47 @@
+{
+  "name": "haven-lander",
+  "version": "1.0.0",
+  "description": "Haven Landing Page - The Video Library Big Tech Can't Delete",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Haven-hvn/haven-lander.git"
+  },
+  "keywords": [
+    "haven",
+    "video",
+    "storage",
+    "web3",
+    "decentralized",
+    "encryption",
+    "filecoin",
+    "ipfs"
+  ],
+  "author": "Haven Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Haven-hvn/haven-lander/issues"
+  },
+  "homepage": "https://github.com/Haven-hvn/haven-lander#readme",
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.3.0",
+    "@mui/material": "^7.3.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "typescript": "^5.6.0",
+    "vite": "^6.0.0"
+  }
+}

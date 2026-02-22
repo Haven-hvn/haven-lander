@@ -21,7 +21,7 @@ interface PainPoint {
 
 const painPoints: PainPoint[] = [
   {
-    problem: 'You pay Dropbox $20/month for 2TB',
+    problem: 'You pay Big Tech $20/month for 2TB',
     problemDetail: 'Maybe $2 goes to storage. The rest is their margin.',
     solution: 'Pay providers directly',
     solutionDetail: 'No markup. Protocol rates.',

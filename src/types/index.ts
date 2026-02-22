@@ -16,7 +16,7 @@ export interface Feature {
 export interface ComparisonRow {
   feature: string;
   haven: boolean | string;
-  googleDrive: boolean | string;
+  otherCloud: boolean | string;
   youtube: boolean | string;
 }
 

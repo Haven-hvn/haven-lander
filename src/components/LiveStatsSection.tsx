@@ -414,10 +414,10 @@ const LiveStatsSection: React.FC = () => {
             >
               <StatCard
                 icon={BalanceIcon}
-                label="Total USDFC Transacted"
-                value={filecoin.data.totalUSDFCTransacted}
+                label="Total Stablecoins Transacted"
+                value={filecoin.data.totalStablecoinsTransacted}
                 suffix=""
-                subValue={`${filecoin.data.totalUSDFCLocked} USDFC Locked • Active Storage Deals: ${filecoin.data.activeStorageDeals}`}
+                subValue={`${filecoin.data.totalStablecoinsLocked} Stablecoins Locked • Active Storage Deals: ${filecoin.data.activeStorageDeals}`}
                 trend="up"
                 source="Filecoin Pay"
                 color={liquidGlassTokens.neon.amber}
@@ -456,8 +456,8 @@ const LiveStatsSection: React.FC = () => {
                 : '1,626' 
             },
             { 
-              label: 'USDFC Locked', 
-              value: filecoin.data.totalUSDFCLocked || '--'
+              label: 'Stablecoins Locked', 
+              value: filecoin.data.totalStablecoinsLocked || '--'
             },
             { 
               label: 'Active Archives', 

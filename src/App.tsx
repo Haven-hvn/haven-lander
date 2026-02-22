@@ -8,6 +8,8 @@ import CircuitSubstrate from '@/components/CircuitSubstrate';
 import Navigation from '@/components/Navigation';
 import HeroSection from '@/components/HeroSection';
 import TrustBar from '@/components/TrustBar';
+import EconomicsSection from '@/components/EconomicsSection';
+import HavenIsSection from '@/components/HavenIsSection';
 import LiveStatsSection from '@/components/LiveStatsSection';
 import ValuePropositionSection from '@/components/ValuePropositionSection';
 import ComparisonSection from '@/components/ComparisonSection';
@@ -79,6 +81,12 @@ function App() {
 
           {/* Trust Bar */}
           <TrustBar />
+
+          {/* Economics Section - Why Storage Is This Cheap */}
+          <EconomicsSection />
+
+          {/* What Haven Is/Isn't Section */}
+          <HavenIsSection />
 
           {/* Live Stats */}
           <LiveStatsSection />

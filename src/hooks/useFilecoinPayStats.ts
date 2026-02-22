@@ -1,6 +1,6 @@
 /**
  * useFilecoinPayStats Hook
- * Fetches and manages Filecoin Pay (USDFC) metrics
+ * Fetches and manages Filecoin Pay metrics
  */
 
 import { useState, useEffect, useCallback, useRef } from 'react';
@@ -34,9 +34,9 @@ const DEFAULT_OPTIONS: UseFilecoinPayStatsOptions = {
 };
 
 const initialData: FilecoinPayMetrics = {
-  totalUSDFCTransacted: '0',
+  totalStablecoinsTransacted: '0',
   totalFILTransacted: '0',
-  totalUSDFCLocked: '0',
+  totalStablecoinsLocked: '0',
   totalFILLocked: '0',
   usdfcToken: null,
   activeStorageDeals: 0,

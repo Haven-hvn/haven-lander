@@ -12,6 +12,9 @@ import {
   Storage as StorageIcon,
   Search as SearchIcon,
   ArrowForward as ArrowIcon,
+  GitHub as GitHubIcon,
+  Code as CodeIcon,
+  Visibility as VisibilityIcon,
 } from '@mui/icons-material';
 import { liquidGlassTokens, glowEffects } from '@/styles/theme';
 import GlassCard from './GlassCard';
@@ -390,6 +393,158 @@ const TechStackSection: React.FC = () => {
                   Stream Anywhere
                 </Typography>
               </Box>
+            </Stack>
+          </Box>
+
+          {/* Verify Everything Section */}
+          <Box
+            sx={{
+              mt: 6,
+              p: 4,
+              borderRadius: `${liquidGlassTokens.radius.lg}px`,
+              background: 'rgba(0, 245, 255, 0.05)',
+              border: `1px solid ${liquidGlassTokens.neon.cyan}30`,
+              position: 'relative',
+              overflow: 'hidden',
+            }}
+          >
+            {/* Background Glow */}
+            <Box
+              sx={{
+                position: 'absolute',
+                top: -50,
+                right: -50,
+                width: 200,
+                height: 200,
+                borderRadius: '50%',
+                background: `radial-gradient(circle, ${liquidGlassTokens.neon.cyan}10 0%, transparent 70%)`,
+                filter: 'blur(40px)',
+              }}
+            />
+
+            <Stack
+              direction={{ xs: 'column', md: 'row' }}
+              spacing={4}
+              alignItems="center"
+              justifyContent="space-between"
+              position="relative"
+            >
+              <Stack spacing={2} flex={1}>
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+                  <VisibilityIcon sx={{ color: liquidGlassTokens.neon.cyan, fontSize: 24 }} />
+                  <Typography
+                    variant="h6"
+                    sx={{
+                      fontWeight: 700,
+                      color: 'white',
+                    }}
+                  >
+                    Don&apos;t Trust Us. Verify Us.
+                  </Typography>
+                </Box>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: `rgba(255, 255, 255, ${liquidGlassTokens.text.secondary})`,
+                    lineHeight: 1.6,
+                  }}
+                >
+                  Audit the code on GitHub. See exactly how Haven works. 
+                  No black boxes, no hidden logic—complete transparency.
+                </Typography>
+              </Stack>
+
+              <Stack direction="row" spacing={2}>
+                <Box
+                  component="a"
+                  href="https://github.com/Haven-hvn/haven-cli"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 1.5,
+                    px: 3,
+                    py: 2,
+                    borderRadius: `${liquidGlassTokens.radius.md}px`,
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    border: `1px solid ${liquidGlassTokens.glass.border}`,
+                    textDecoration: 'none',
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      background: 'rgba(255, 255, 255, 0.1)',
+                      borderColor: liquidGlassTokens.neon.cyan,
+                    },
+                  }}
+                >
+                  <GitHubIcon sx={{ color: liquidGlassTokens.neon.cyan, fontSize: 20 }} />
+                  <Box>
+                    <Typography
+                      variant="caption"
+                      sx={{
+                        color: `rgba(255, 255, 255, ${liquidGlassTokens.text.tertiary})`,
+                        display: 'block',
+                      }}
+                    >
+                      haven-cli
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: 'white',
+                        fontWeight: 600,
+                      }}
+                    >
+                      View on GitHub
+                    </Typography>
+                  </Box>
+                </Box>
+
+                <Box
+                  component="a"
+                  href="https://github.com/Haven-hvn/haven-player"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 1.5,
+                    px: 3,
+                    py: 2,
+                    borderRadius: `${liquidGlassTokens.radius.md}px`,
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    border: `1px solid ${liquidGlassTokens.glass.border}`,
+                    textDecoration: 'none',
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      background: 'rgba(255, 255, 255, 0.1)',
+                      borderColor: liquidGlassTokens.neon.cyan,
+                    },
+                  }}
+                >
+                  <CodeIcon sx={{ color: liquidGlassTokens.neon.magenta, fontSize: 20 }} />
+                  <Box>
+                    <Typography
+                      variant="caption"
+                      sx={{
+                        color: `rgba(255, 255, 255, ${liquidGlassTokens.text.tertiary})`,
+                        display: 'block',
+                      }}
+                    >
+                      haven-player
+                    </Typography>
+                    <Typography
+                      variant="body2"
+                      sx={{
+                        color: 'white',
+                        fontWeight: 600,
+                      }}
+                    >
+                      View on GitHub
+                    </Typography>
+                  </Box>
+                </Box>
+              </Stack>
             </Stack>
           </Box>
         </Box>

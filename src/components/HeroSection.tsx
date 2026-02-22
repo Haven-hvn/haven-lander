@@ -1,5 +1,5 @@
 
-import { type FC, Fragment } from 'react';
+import { type FC, Fragment, useState } from 'react';
 import { openExternalLink } from '@/utils/links';
 import {
   Box,
@@ -7,6 +7,10 @@ import {
   Button,
   Container,
   Stack,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  IconButton,
 } from '@mui/material';
 import {
   PlayArrow as PlayIcon,
@@ -15,6 +19,9 @@ import {
   Security as SecurityIcon,
   Storage as StorageIcon,
   CloudOff as CloudOffIcon,
+  Close as CloseIcon,
+  Computer as ComputerIcon,
+  Dns as DnsIcon,
 } from '@mui/icons-material';
 import { liquidGlassTokens, glowEffects, glassStyles } from '@/styles/theme';
 import { HeroCard } from './GlassCard';
@@ -24,6 +31,21 @@ interface HeroSectionProps {
 }
 
 const HeroSection: FC<HeroSectionProps> = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  const handleCliClick = () => {
+    openExternalLink('https://github.com/Haven-hvn/haven-cli');
+    handleClose();
+  };
+
+  const handlePlayerClick = () => {
+    openExternalLink('https://github.com/Haven-hvn/haven-player');
+    handleClose();
+  };
+
   return (
     <Box
       id="hero"
@@ -61,7 +83,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
                 backgroundClip: 'text',
               }}
             >
-              Reclaiming the Internet for the User
+              Stop Paying Middlemen for Storage Access
             </Typography>
 
             {/* Subheadline */}
@@ -75,9 +97,9 @@ const HeroSection: FC<HeroSectionProps> = () => {
                 maxWidth: 560,
               }}
             >
-              Reclaim ownership of your digital life. Haven gives you 
-              encryption, decentralized storage, and true data sovereignty—
-              for content that's composable, interoperable, and truly yours.
+              Filecoin providers have excess capacity. Network subsidies make 
+              storage cheap. Haven is the open-source tool that connects you 
+              directly—zero fees, no platform, your keys.
             </Typography>
 
             {/* CTAs */}
@@ -90,7 +112,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
                 variant="contained"
                 size="large"
                 endIcon={<ArrowIcon />}
-                onClick={() => openExternalLink('https://github.com/Haven-hvn/haven-cli/releases')}
+                onClick={handleOpen}
                 sx={{
                   background: `linear-gradient(135deg, ${liquidGlassTokens.neon.cyan}25 0%, ${liquidGlassTokens.neon.cyan}15 100%)`,
                   border: `1px solid ${liquidGlassTokens.neon.cyan}50`,
@@ -155,6 +177,184 @@ const HeroSection: FC<HeroSectionProps> = () => {
                 Read Docs
               </Button>
             </Stack>
+
+            {/* Upload Options Modal - Hick's Law: Present choices after initial decision */}
+            <Dialog
+              open={open}
+              onClose={handleClose}
+              maxWidth="sm"
+              fullWidth
+              PaperProps={{
+                sx: {
+                  background: 'linear-gradient(135deg, #12121A 0%, #0A0A0F 100%)',
+                  border: `1px solid ${liquidGlassTokens.glass.border}`,
+                  borderRadius: `${liquidGlassTokens.radius.lg}px`,
+                  boxShadow: `${glowEffects.cyan(0.15)}, 0 25px 50px -12px rgba(0, 0, 0, 0.5)`,
+                },
+              }}
+            >
+              <DialogTitle
+                sx={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  pb: 1,
+                }}
+              >
+                <Typography
+                  variant="h5"
+                  sx={{
+                    fontWeight: 700,
+                    background: `linear-gradient(135deg, #FFFFFF 0%, ${liquidGlassTokens.neon.cyan} 100%)`,
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                  }}
+                >
+                  Choose Your Path
+                </Typography>
+                <IconButton
+                  onClick={handleClose}
+                  sx={{
+                    color: `rgba(255, 255, 255, ${liquidGlassTokens.text.tertiary})`,
+                    '&:hover': {
+                      color: 'white',
+                      background: `${liquidGlassTokens.neon.magenta}15`,
+                    },
+                  }}
+                >
+                  <CloseIcon />
+                </IconButton>
+              </DialogTitle>
+              <DialogContent>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: `rgba(255, 255, 255, ${liquidGlassTokens.text.secondary})`,
+                    mb: 3,
+                  }}
+                >
+                  Select the option that fits your setup. Both paths lead to the same decentralized storage network.
+                </Typography>
+                <Stack spacing={2}>
+                  {/* Desktop Path - haven-cli */}
+                  <Button
+                    onClick={handleCliClick}
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      justifyContent: 'flex-start',
+                      textAlign: 'left',
+                      p: 3,
+                      borderRadius: `${liquidGlassTokens.radius.md}px`,
+                      background: `linear-gradient(135deg, ${liquidGlassTokens.neon.cyan}15 0%, ${liquidGlassTokens.neon.cyan}05 100%)`,
+                      border: `1px solid ${liquidGlassTokens.neon.cyan}40`,
+                      transition: 'all 0.3s ease',
+                      '&:hover': {
+                        background: `linear-gradient(135deg, ${liquidGlassTokens.neon.cyan}25 0%, ${liquidGlassTokens.neon.cyan}10 100%)`,
+                        borderColor: liquidGlassTokens.neon.cyan,
+                        boxShadow: glowEffects.cyan(0.3),
+                        transform: 'translateY(-2px)',
+                      },
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        width: 48,
+                        height: 48,
+                        borderRadius: '12px',
+                        background: `${liquidGlassTokens.neon.cyan}20`,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        mr: 2,
+                        flexShrink: 0,
+                      }}
+                    >
+                      <ComputerIcon sx={{ color: liquidGlassTokens.neon.cyan, fontSize: 24 }} />
+                    </Box>
+                    <Box>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          color: liquidGlassTokens.neon.cyan,
+                          fontWeight: 600,
+                          mb: 0.5,
+                        }}
+                      >
+                        Desktop App
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          color: `rgba(255, 255, 255, ${liquidGlassTokens.text.secondary})`,
+                        }}
+                      >
+                        haven-cli — For personal computers. Easy setup, GUI included.
+                      </Typography>
+                    </Box>
+                  </Button>
+
+                  {/* Server Path - haven-player */}
+                  <Button
+                    onClick={handlePlayerClick}
+                    sx={{
+                      display: 'flex',
+                      alignItems: 'flex-start',
+                      justifyContent: 'flex-start',
+                      textAlign: 'left',
+                      p: 3,
+                      borderRadius: `${liquidGlassTokens.radius.md}px`,
+                      background: `linear-gradient(135deg, ${liquidGlassTokens.neon.magenta}15 0%, ${liquidGlassTokens.neon.magenta}05 100%)`,
+                      border: `1px solid ${liquidGlassTokens.neon.magenta}40`,
+                      transition: 'all 0.3s ease',
+                      '&:hover': {
+                        background: `linear-gradient(135deg, ${liquidGlassTokens.neon.magenta}25 0%, ${liquidGlassTokens.neon.magenta}10 100%)`,
+                        borderColor: liquidGlassTokens.neon.magenta,
+                        boxShadow: glowEffects.magenta(0.3),
+                        transform: 'translateY(-2px)',
+                      },
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        width: 48,
+                        height: 48,
+                        borderRadius: '12px',
+                        background: `${liquidGlassTokens.neon.magenta}20`,
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        mr: 2,
+                        flexShrink: 0,
+                      }}
+                    >
+                      <DnsIcon sx={{ color: liquidGlassTokens.neon.magenta, fontSize: 24 }} />
+                    </Box>
+                    <Box>
+                      <Typography
+                        variant="h6"
+                        sx={{
+                          color: liquidGlassTokens.neon.magenta,
+                          fontWeight: 600,
+                          mb: 0.5,
+                        }}
+                      >
+                        Server / VPS
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          color: `rgba(255, 255, 255, ${liquidGlassTokens.text.secondary})`,
+                        }}
+                      >
+                        haven-player — For servers, VPS, headless setups. Docker ready.
+                      </Typography>
+                    </Box>
+                  </Button>
+                </Stack>
+              </DialogContent>
+            </Dialog>
 
             {/* Trust Indicators */}
             <Stack direction="row" spacing={4} sx={{ opacity: 0.8 }}>

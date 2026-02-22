@@ -1,11 +1,11 @@
 /**
- * Filecoin Pay (USDFC) Service
+ * Filecoin Pay Service
  * Provides token transaction statistics from Filecoin Pay
  * 
  * Subgraph: https://api.goldsky.com/api/public/project_cmb9tuo8r1xdw01ykb8uidk7h/subgraphs/filecoin-pay-mainnet/1.0.6/gn
  * 
  * Token Addresses (Mainnet):
- * - USDFC: 0x80B98d3aa09ffff255c3ba4A241111Ff1262F045
+ * - Stablecoins: 0x80B98d3aa09ffff255c3ba4A241111Ff1262F045
  * - FIL: 0x0000000000000000000000000000000000000000 (native)
  */
 
@@ -22,9 +22,9 @@ export interface TokenData {
 }
 
 export interface FilecoinPayMetrics {
-  totalUSDFCTransacted: string;
+  totalStablecoinsTransacted: string;
   totalFILTransacted: string;
-  totalUSDFCLocked: string;
+  totalStablecoinsLocked: string;
   totalFILLocked: string;
   usdfcToken: TokenData | null;
   activeStorageDeals: number;
@@ -201,9 +201,9 @@ export async function fetchFilecoinPayMetrics(
     const activeStorageDeals = 50; // Placeholder - could be fetched from paymentsMetrics
 
     const metrics: FilecoinPayMetrics = {
-      totalUSDFCTransacted: formatTokenValue(usdfcTotal.toString(), 18),
+      totalStablecoinsTransacted: formatTokenValue(usdfcTotal.toString(), 18),
       totalFILTransacted: formatTokenValue(filTotal.toString(), 18),
-      totalUSDFCLocked: usdfcToken 
+      totalStablecoinsLocked: usdfcToken 
         ? formatTokenValue(usdfcToken.lockupCurrent, 18)
         : '0',
       totalFILLocked: filToken
@@ -215,8 +215,8 @@ export async function fetchFilecoinPayMetrics(
     };
 
     console.log('[FilecoinPayService] Metrics fetched:', {
-      totalUSDFCTransacted: metrics.totalUSDFCTransacted,
-      totalUSDFCLocked: metrics.totalUSDFCLocked,
+      totalStablecoinsTransacted: metrics.totalStablecoinsTransacted,
+      totalStablecoinsLocked: metrics.totalStablecoinsLocked,
     });
 
     cache = { data: metrics, timestamp: Date.now() };
@@ -233,9 +233,9 @@ export async function fetchFilecoinPayMetrics(
  */
 export function getMockData(): FilecoinPayMetrics {
   return {
-    totalUSDFCTransacted: '54.52',
+    totalStablecoinsTransacted: '54.52',
     totalFILTransacted: '0',
-    totalUSDFCLocked: '124.16',
+    totalStablecoinsLocked: '124.16',
     totalFILLocked: '0',
     usdfcToken: null,
     activeStorageDeals: 50,

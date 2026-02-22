@@ -15,29 +15,29 @@ import GlassCard from './GlassCard';
 
 interface PainPoint {
   problem: string;
-  problemIcon: string;
+  problemDetail: string;
   solution: string;
-  solutionIcon: string;
+  solutionDetail: string;
 }
 
 const painPoints: PainPoint[] = [
   {
-    problem: 'Your creative work deleted without warning',
-    problemIcon: '😰',
-    solution: 'Your content lives on decentralized networks, immune to censorship',
-    solutionIcon: '🛡️',
+    problem: 'You pay Dropbox $20/month for 2TB',
+    problemDetail: 'Maybe $2 goes to storage. The rest is their margin.',
+    solution: 'Pay providers directly',
+    solutionDetail: 'No markup. Protocol rates.',
   },
   {
-    problem: 'Locked out of your own digital memories',
-    problemIcon: '🔒',
-    solution: 'Cryptographic access—only you control the keys',
-    solutionIcon: '🔓',
+    problem: 'Every storage platform takes a cut',
+    problemDetail: 'Even Web3 ones add fees on top.',
+    solution: 'Haven isn\'t a platform',
+    solutionDetail: 'We don\'t take a cut because we\'re not in the middle.',
   },
   {
-    problem: 'Trapped in endless subscription hell',
-    problemIcon: '💸',
-    solution: 'Own your storage, not rent it. Pay once, keep forever',
-    solutionIcon: '💎',
+    problem: 'You\'re renting access to your own data',
+    problemDetail: 'Stop paying recurring fees for your own files.',
+    solution: 'You own the storage relationship',
+    solutionDetail: 'If Haven disappears tomorrow, nothing changes.',
   },
 ];
 
@@ -97,7 +97,7 @@ const PainPointsSection: React.FC = () => {
             }}
           >
             <WarningIcon sx={{ fontSize: 16 }} />
-            What's Broken
+            You&apos;re Overpaying for Middlemen
           </Typography>
           <Typography
             variant="h2"
@@ -107,7 +107,7 @@ const PainPointsSection: React.FC = () => {
               mb: 2,
             }}
           >
-            Reclaiming the Internet for the User
+            Stop Feeding the Middlemen
           </Typography>
           <Typography
             variant="body1"
@@ -117,21 +117,20 @@ const PainPointsSection: React.FC = () => {
               mx: 'auto',
             }}
           >
-            Your data deserves to be yours—composable, interoperable, and free from 
-            platform lock-in. Own your digital footprint with encryption, 
-            decentralized storage, and true data sovereignty.
+            Storage doesn&apos;t have to be expensive. You&apos;re paying for executive salaries, 
+            marketing budgets, and shareholder returns—not just storage.
           </Typography>
         </Box>
 
         {/* Problem/Solution Cards */}
         <Grid container spacing={4}>
           {painPoints.map((point, index) => (
-            <Grid size={{ xs: 12, md: 6 }} key={index}>
+            <Grid size={{ xs: 12, md: 4 }} key={index}>
               <Box
                 ref={(el: HTMLDivElement | null) => { cardRefs.current[index] = el; }}
                 sx={{
                   opacity: visibleCards[index] ? 1 : 0,
-                  transform: visibleCards[index] ? 'translateX(0)' : 'translateX(-30px)',
+                  transform: visibleCards[index] ? 'translateY(0)' : 'translateY(30px)',
                   transition: `all 0.6s cubic-bezier(0.4, 0, 0.2, 1) ${index * 0.1}s`,
                 }}
               >
@@ -139,20 +138,20 @@ const PainPointsSection: React.FC = () => {
                   sx={{
                     p: 0,
                     overflow: 'hidden',
+                    height: '100%',
                   }}
                 >
-                  <Grid container>
+                  <Stack sx={{ height: '100%' }}>
                     {/* Problem Side */}
-                    <Grid
-                      size={{ xs: 12, sm: 6 }}
+                    <Box
                       sx={{
-                        p: 4,
+                        p: 3,
                         background: 'rgba(255, 51, 102, 0.05)',
-                        borderRight: { sm: `1px solid ${liquidGlassTokens.glass.border}` },
-                        borderBottom: { xs: `1px solid ${liquidGlassTokens.glass.border}`, sm: 'none' },
+                        borderBottom: `1px solid ${liquidGlassTokens.glass.border}`,
+                        flex: 1,
                       }}
                     >
-                      <Stack spacing={2}>
+                      <Stack spacing={1}>
                         <Typography
                           variant="overline"
                           sx={{
@@ -164,28 +163,36 @@ const PainPointsSection: React.FC = () => {
                         >
                           The Problem
                         </Typography>
-                        <Typography sx={{ fontSize: 40 }}>{point.problemIcon}</Typography>
                         <Typography
-                          variant="body1"
+                          variant="h6"
                           sx={{
-                            color: `rgba(255, 255, 255, ${liquidGlassTokens.text.secondary})`,
-                            fontWeight: 500,
+                            color: 'white',
+                            fontWeight: 600,
+                            fontSize: '1.125rem',
                           }}
                         >
                           {point.problem}
                         </Typography>
+                        <Typography
+                          variant="body2"
+                          sx={{
+                            color: `rgba(255, 255, 255, ${liquidGlassTokens.text.tertiary})`,
+                          }}
+                        >
+                          {point.problemDetail}
+                        </Typography>
                       </Stack>
-                    </Grid>
+                    </Box>
 
                     {/* Solution Side */}
-                    <Grid
-                      size={{ xs: 12, sm: 6 }}
+                    <Box
                       sx={{
-                        p: 4,
+                        p: 3,
                         background: 'rgba(0, 255, 136, 0.05)',
+                        flex: 1,
                       }}
                     >
-                      <Stack spacing={2}>
+                      <Stack spacing={1}>
                         <Typography
                           variant="overline"
                           sx={{
@@ -195,73 +202,34 @@ const PainPointsSection: React.FC = () => {
                             letterSpacing: '0.1em',
                           }}
                         >
-                          Haven's Solution
+                          Haven&apos;s Solution
                         </Typography>
-                        <Typography sx={{ fontSize: 40 }}>{point.solutionIcon}</Typography>
                         <Typography
-                          variant="body1"
+                          variant="h6"
                           sx={{
                             color: 'white',
                             fontWeight: 600,
+                            fontSize: '1.125rem',
                           }}
                         >
                           {point.solution}
                         </Typography>
+                        <Typography
+                          variant="body2"
+                          sx={{
+                            color: `rgba(255, 255, 255, ${liquidGlassTokens.text.secondary})`,
+                          }}
+                        >
+                          {point.solutionDetail}
+                        </Typography>
                       </Stack>
-                    </Grid>
-                  </Grid>
-
-                  {/* Arrow indicator for desktop */}
-                  <Box
-                    sx={{
-                      position: 'absolute',
-                      top: '50%',
-                      left: '50%',
-                      transform: 'translate(-50%, -50%)',
-                      width: 32,
-                      height: 32,
-                      borderRadius: '50%',
-                      background: liquidGlassTokens.canvas.elevated,
-                      border: `2px solid ${liquidGlassTokens.glass.border}`,
-                      display: { xs: 'none', sm: 'flex' },
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      zIndex: 2,
-                    }}
-                  >
-                    <CheckIcon
-                      sx={{
-                        fontSize: 16,
-                        color: liquidGlassTokens.neon.success,
-                      }}
-                    />
-                  </Box>
+                    </Box>
+                  </Stack>
                 </GlassCard>
               </Box>
             </Grid>
           ))}
         </Grid>
-
-        {/* Philosophical Statement */}
-        <Box sx={{ textAlign: 'center', mt: 8, mb: 6 }}>
-          <Typography
-            variant="h4"
-            sx={{
-              fontWeight: 600,
-              fontSize: { xs: '1.5rem', md: '2rem' },
-              fontStyle: 'italic',
-              background: `linear-gradient(135deg, #FFFFFF 0%, ${liquidGlassTokens.neon.cyan} 100%)`,
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              maxWidth: 800,
-              mx: 'auto',
-              lineHeight: 1.4,
-            }}
-          >
-            The internet was meant to be open, permissionless, and free...
-          </Typography>
-        </Box>
 
         {/* Bottom CTA */}
         <Box
@@ -293,8 +261,8 @@ const PainPointsSection: React.FC = () => {
               mx: 'auto',
             }}
           >
-            Join the movement reclaiming the internet for users through 
-            true data ownership, composability, and sovereign infrastructure.
+            We&apos;re sharing a discovery, not selling a product. Audit the code, 
+            verify the economics, and decide for yourself.
           </Typography>
         </Box>
       </Container>

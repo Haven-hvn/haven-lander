@@ -111,7 +111,7 @@ const ValuePropositionSection: React.FC = () => {
               mb: 2,
             }}
           >
-            The Movement
+            The Window Exists Now
           </Typography>
           <Typography
             variant="h2"
@@ -121,7 +121,7 @@ const ValuePropositionSection: React.FC = () => {
               mb: 2,
             }}
           >
-            Principles of Digital Sovereignty
+            Act While Providers Are Competing for You
           </Typography>
           <Typography
             variant="body1"
@@ -131,8 +131,11 @@ const ValuePropositionSection: React.FC = () => {
               mx: 'auto',
             }}
           >
-            Haven isn't just storage—it's a stance. A declaration that your 
-            digital life belongs to you, and a tool to reclaim what's rightfully yours.
+            Filecoin's network is still bootstrapping. Providers are hungry for clients. 
+            Direct relationships are being established. As the network matures, capacity 
+            fills, providers become selective and pricing power shifts. The optimal time 
+            to establish direct provider relationships is when they're competing for you—not 
+            when you're competing for them. That time is now.
           </Typography>
         </Box>
 

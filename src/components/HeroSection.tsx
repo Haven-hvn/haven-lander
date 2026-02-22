@@ -36,13 +36,13 @@ const HeroSection: FC<HeroSectionProps> = () => {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const handleCliClick = () => {
-    openExternalLink('https://github.com/Haven-hvn/haven-cli');
+  const handlePlayerClick = () => {
+    openExternalLink('https://github.com/Haven-hvn/haven-player');
     handleClose();
   };
 
-  const handlePlayerClick = () => {
-    openExternalLink('https://github.com/Haven-hvn/haven-player');
+  const handleCliClick = () => {
+    openExternalLink('https://github.com/Haven-hvn/haven-cli');
     handleClose();
   };
 
@@ -237,9 +237,9 @@ const HeroSection: FC<HeroSectionProps> = () => {
                   Select the option that fits your setup. Both paths lead to the same decentralized storage network.
                 </Typography>
                 <Stack spacing={2}>
-                  {/* Desktop Path - haven-cli */}
+                  {/* Desktop Path - haven-player */}
                   <Button
-                    onClick={handleCliClick}
+                    onClick={handlePlayerClick}
                     sx={{
                       display: 'flex',
                       alignItems: 'flex-start',
@@ -290,14 +290,14 @@ const HeroSection: FC<HeroSectionProps> = () => {
                           color: `rgba(255, 255, 255, ${liquidGlassTokens.text.secondary})`,
                         }}
                       >
-                        haven-cli — For personal computers. Easy setup, GUI included.
+                        haven-player — For personal computers. Easy setup, GUI included.
                       </Typography>
                     </Box>
                   </Button>
 
-                  {/* Server Path - haven-player */}
+                  {/* Server Path - haven-cli */}
                   <Button
-                    onClick={handlePlayerClick}
+                    onClick={handleCliClick}
                     sx={{
                       display: 'flex',
                       alignItems: 'flex-start',
@@ -348,7 +348,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
                           color: `rgba(255, 255, 255, ${liquidGlassTokens.text.secondary})`,
                         }}
                       >
-                        haven-player — For servers, VPS, headless setups. Docker ready.
+                        haven-cli — For servers, VPS, headless setups. Docker ready.
                       </Typography>
                     </Box>
                   </Button>

@@ -34,12 +34,6 @@ const painPoints: PainPoint[] = [
     solutionIcon: '🔓',
   },
   {
-    problem: 'Surveillance capitalism watching everything',
-    problemIcon: '👁️',
-    solution: 'Zero-knowledge architecture—we can't see your data, period',
-    solutionIcon: '🔐',
-  },
-  {
     problem: 'Trapped in endless subscription hell',
     problemIcon: '💸',
     solution: 'Own your storage, not rent it. Pay once, keep forever',

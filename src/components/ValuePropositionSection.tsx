@@ -30,7 +30,6 @@ const valueProps: ValueProp[] = [
       'Client-side encryption before upload',
       "Lit Protocol's proven 99.6% reliability",
       'Only you control the decryption keys',
-      'Zero-knowledge architecture',
     ],
     color: liquidGlassTokens.neon.cyan,
     glowColor: 'cyan',

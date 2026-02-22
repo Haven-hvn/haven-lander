@@ -341,7 +341,7 @@ const LiveStatsSection: React.FC = () => {
             >
               <StatCard
                 icon={StorageIcon}
-                label="Total Data Secured"
+                label="Total Metadata Secured"
                 value={arkiv.data.totalGB}
                 suffix=" GB"
                 subValue={`30-Day Growth: ${arkiv.data.totalGrowth30DaysGB.toFixed(2)} GB`}

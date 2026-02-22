@@ -224,8 +224,7 @@ export async function fetchFilecoinPayMetrics(
 
   } catch (error) {
     console.error('[FilecoinPayService] Fetch error:', error);
-    console.warn('[FilecoinPayService] Returning mock data due to error');
-    return getMockData();
+    throw error; // Let the caller handle the error
   }
 }
 

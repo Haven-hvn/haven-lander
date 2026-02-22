@@ -7,7 +7,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import {
   fetchFilecoinPayMetrics,
   FilecoinPayMetrics,
-  getMockData,
+  clearCache,
 } from '@/services/filecoinPayService';
 
 export interface FilecoinPayStatsState {
@@ -77,29 +77,26 @@ export function useFilecoinPayStats(
     }
 
     try {
+      // Clear cache on retry to ensure fresh data
       const data = await fetchFilecoinPayMetrics(opts.useCache);
-      
-      // Check if we're using mock data (subgraph not ready)
-      const mockData = getMockData();
-      const isMockData = data.totalUSDFCTransacted === mockData.totalUSDFCTransacted &&
-                         data.totalFILTransacted === mockData.totalFILTransacted;
       
       setState({
         data,
         isLoading: false,
-        error: isMockData ? 'Using mock data - subgraph indexing in progress' : null,
+        error: null,
         lastFetchTime: new Date(),
-        isSubgraphReady: !isMockData,
+        isSubgraphReady: true,
       });
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : 'Unknown error';
       console.error('[useFilecoinPayStats] Fetch error:', errorMessage);
       
+      // Keep existing data if we have it, otherwise show error
       setState(prev => ({
         ...prev,
         isLoading: false,
-        error: errorMessage,
-        lastFetchTime: new Date(),
+        error: prev.lastFetchTime ? null : errorMessage,
+        lastFetchTime: prev.lastFetchTime,
         isSubgraphReady: false,
       }));
     }
@@ -110,7 +107,15 @@ export function useFilecoinPayStats(
   }, [fetchData]);
 
   const retry = useCallback(async () => {
-    setState(prev => ({ ...prev, error: null, isLoading: true }));
+    clearCache(); // Clear cache to force fresh fetch
+    // Reset state completely to initial state to clear any stale error/data
+    setState({
+      data: initialData,
+      isLoading: true,
+      error: null,
+      lastFetchTime: null,
+      isSubgraphReady: false,
+    });
     await fetchData(true);
   }, [fetchData]);
 

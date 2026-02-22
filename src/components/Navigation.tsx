@@ -14,7 +14,7 @@ import {
   useScrollTrigger,
   Slide,
 } from '@mui/material';
-import { Menu as MenuIcon, AcUnit as BrainIcon } from '@mui/icons-material';
+import { Menu as MenuIcon } from '@mui/icons-material';
 import { liquidGlassTokens, glowEffects } from '@/styles/theme';
 
 interface NavigationProps {
@@ -73,7 +73,7 @@ const Navigation: React.FC<NavigationProps> = ({ onScrollToSection }) => {
             boxShadow: glowEffects.cyan(0.2),
           }}
         >
-          <BrainIcon sx={{ color: liquidGlassTokens.neon.cyan, fontSize: 20 }} />
+          <img src="/haven-icon.ico" alt="Haven" style={{ width: 20, height: 20 }} />
         </Box>
         <Typography variant="h6" sx={{ fontWeight: 600, color: 'white' }}>
           Haven
@@ -155,10 +155,12 @@ const Navigation: React.FC<NavigationProps> = ({ onScrollToSection }) => {
                 boxShadow: glowEffects.cyan(0.2),
               }}
             >
-              <BrainIcon
-                sx={{
-                  color: liquidGlassTokens.neon.cyan,
-                  fontSize: 22,
+              <img
+                src="/haven-icon.ico"
+                alt="Haven"
+                style={{
+                  width: 22,
+                  height: 22,
                   filter: `drop-shadow(0 0 4px ${liquidGlassTokens.neon.cyan})`,
                 }}
               />

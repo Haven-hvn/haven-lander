@@ -8,7 +8,6 @@ import {
   Divider,
 } from '@mui/material';
 import {
-  AcUnit as BrainIcon,
   GitHub as GitHubIcon,
   Twitter as TwitterIcon,
   Message as DiscordIcon,
@@ -91,13 +90,18 @@ const Footer: React.FC = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
+                  position: 'relative',
+                  overflow: 'hidden',
                   boxShadow: glowEffects.cyan(0.2),
                 }}
               >
-                <BrainIcon
-                  sx={{
-                    color: liquidGlassTokens.neon.cyan,
-                    fontSize: 22,
+                <img
+                  src="/haven-icon.ico"
+                  alt="Haven"
+                  style={{
+                    width: 22,
+                    height: 22,
+                    filter: `drop-shadow(0 0 4px ${liquidGlassTokens.neon.cyan})`,
                   }}
                 />
               </Box>

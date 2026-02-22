@@ -22,27 +22,27 @@ interface PainPoint {
 
 const painPoints: PainPoint[] = [
   {
-    problem: 'Your YouTube channel deleted overnight',
+    problem: 'Your creative work deleted without warning',
     problemIcon: '😰',
-    solution: 'Your content preserved permanently',
+    solution: 'Your content lives on decentralized networks, immune to censorship',
     solutionIcon: '🛡️',
   },
   {
-    problem: 'Google Drive locked without warning',
+    problem: 'Locked out of your own digital memories',
     problemIcon: '🔒',
-    solution: 'Always accessible with your wallet',
+    solution: 'Cryptographic access—only you control the keys',
     solutionIcon: '🔓',
   },
   {
-    problem: 'Worried about privacy breaches',
+    problem: 'Surveillance capitalism watching everything',
     problemIcon: '👁️',
-    solution: 'End-to-end encryption by default',
+    solution: 'Zero-knowledge architecture—we can't see your data, period',
     solutionIcon: '🔐',
   },
   {
-    problem: 'Tired of monthly storage fees',
+    problem: 'Trapped in endless subscription hell',
     problemIcon: '💸',
-    solution: 'Pay-as-you-go with transparent costs',
+    solution: 'Own your storage, not rent it. Pay once, keep forever',
     solutionIcon: '💎',
   },
 ];
@@ -103,7 +103,7 @@ const PainPointsSection: React.FC = () => {
             }}
           >
             <WarningIcon sx={{ fontSize: 16 }} />
-            Problems Solved
+            What's Broken
           </Typography>
           <Typography
             variant="h2"
@@ -113,7 +113,7 @@ const PainPointsSection: React.FC = () => {
               mb: 2,
             }}
           >
-            The Problems Haven Solves
+            Reclaiming the Internet for the User
           </Typography>
           <Typography
             variant="body1"
@@ -123,8 +123,9 @@ const PainPointsSection: React.FC = () => {
               mx: 'auto',
             }}
           >
-            Content creators face unprecedented risks with centralized platforms. 
-            Haven eliminates these threats permanently.
+            Your data deserves to be yours—composable, interoperable, and free from 
+            platform lock-in. Own your digital footprint with encryption, 
+            decentralized storage, and true data sovereignty.
           </Typography>
         </Box>
 
@@ -247,6 +248,27 @@ const PainPointsSection: React.FC = () => {
           ))}
         </Grid>
 
+        {/* Philosophical Statement */}
+        <Box sx={{ textAlign: 'center', mt: 8, mb: 6 }}>
+          <Typography
+            variant="h4"
+            sx={{
+              fontWeight: 600,
+              fontSize: { xs: '1.5rem', md: '2rem' },
+              fontStyle: 'italic',
+              background: `linear-gradient(135deg, #FFFFFF 0%, ${liquidGlassTokens.neon.cyan} 100%)`,
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+              maxWidth: 800,
+              mx: 'auto',
+              lineHeight: 1.4,
+            }}
+          >
+            The internet was meant to be open, permissionless, and free...
+          </Typography>
+        </Box>
+
         {/* Bottom CTA */}
         <Box
           sx={{
@@ -266,7 +288,7 @@ const PainPointsSection: React.FC = () => {
               color: 'white',
             }}
           >
-            Ready to Take Back Control?
+            Join the Reclamation
           </Typography>
           <Typography
             variant="body1"
@@ -277,8 +299,8 @@ const PainPointsSection: React.FC = () => {
               mx: 'auto',
             }}
           >
-            Join thousands of creators who have already made the switch to 
-            decentralized, encrypted storage.
+            Join the movement reclaiming the internet for users through 
+            true data ownership, composability, and sovereign infrastructure.
           </Typography>
         </Box>
       </Container>

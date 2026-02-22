@@ -77,7 +77,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
                   letterSpacing: '0.05em',
                 }}
               >
-                Now in Beta
+                Reclaim the Internet
               </Typography>
             </Box>
 
@@ -96,7 +96,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
                 backgroundClip: 'text',
               }}
             >
-              The Video Library Big Tech Can't Delete
+              Reclaiming the Internet for the User
             </Typography>
 
             {/* Subheadline */}
@@ -110,8 +110,9 @@ const HeroSection: FC<HeroSectionProps> = () => {
                 maxWidth: 560,
               }}
             >
-              Stop renting space on centralized servers. Use your Web3 wallet to 
-              encrypt, store, and stream your content with zero risk of deplatforming.
+              Reclaim ownership of your digital life. Haven gives you 
+              encryption, decentralized storage, and true data sovereignty—
+              for content that's composable, interoperable, and truly yours.
             </Typography>
 
             {/* CTAs */}
@@ -142,7 +143,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
                   },
                 }}
               >
-                Start Encrypting Now
+                Reclaim Your Data
               </Button>
 
               <Button

@@ -25,7 +25,7 @@ interface ValueProp {
 const valueProps: ValueProp[] = [
   {
     icon: SecurityIcon,
-    title: 'Bulletproof Encryption',
+    title: 'Privacy Without Compromise',
     features: [
       'Client-side encryption before upload',
       "Lit Protocol's proven 99.6% reliability",
@@ -37,7 +37,7 @@ const valueProps: ValueProp[] = [
   },
   {
     icon: WalletIcon,
-    title: 'True Data Ownership',
+    title: 'Unconditional Ownership',
     features: [
       'No accounts, no passwords required',
       'Wallet-based authentication',
@@ -49,7 +49,7 @@ const valueProps: ValueProp[] = [
   },
   {
     icon: SavingsIcon,
-    title: 'Cost-Effective Storage',
+    title: 'Freedom From Platforms',
     features: [
       'Pay only for what you store',
       'No monthly subscriptions',
@@ -112,7 +112,7 @@ const ValuePropositionSection: React.FC = () => {
               mb: 2,
             }}
           >
-            Why Haven
+            The Movement
           </Typography>
           <Typography
             variant="h2"
@@ -122,7 +122,7 @@ const ValuePropositionSection: React.FC = () => {
               mb: 2,
             }}
           >
-            Why Serious Archivists Choose Haven
+            Principles of Digital Sovereignty
           </Typography>
           <Typography
             variant="body1"
@@ -132,8 +132,8 @@ const ValuePropositionSection: React.FC = () => {
               mx: 'auto',
             }}
           >
-            Built for professionals who can't afford to lose their content. 
-            Engineered for those who value privacy above all else.
+            Haven isn't just storage—it's a stance. A declaration that your 
+            digital life belongs to you, and a tool to reclaim what's rightfully yours.
           </Typography>
         </Box>
 

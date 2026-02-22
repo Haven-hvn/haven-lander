@@ -227,7 +227,7 @@ const Navigation: React.FC<NavigationProps> = ({ onScrollToSection }) => {
               },
             }}
           >
-            Start Encrypting
+            Join the Reclamation
           </Button>
 
           {/* Mobile Menu Button */}

@@ -37,7 +37,7 @@ const techStack: TechComponent[] = [
     title: 'Encryption',
     description: 'Military-grade encryption happens in your browser before any data leaves your device. Only you hold the keys.',
     color: liquidGlassTokens.neon.magenta,
-    tech: 'Lit Protocol · 99.6%',
+    tech: 'Lit Protocol',
   },
   {
     icon: StorageIcon,

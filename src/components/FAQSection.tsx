@@ -105,8 +105,7 @@ const FAQSection: React.FC = () => {
               mx: 'auto',
             }}
           >
-            Everything you need to know about Haven. Can't find what you're 
-            looking for? Reach out to our community on Discord.
+            Everything you need to know about Haven.
           </Typography>
         </Box>
 
@@ -208,14 +207,7 @@ const FAQSection: React.FC = () => {
           >
             Still have questions?
           </Typography>
-          <Typography
-            variant="body2"
-            sx={{
-              color: `rgba(255, 255, 255, ${liquidGlassTokens.text.secondary})`,
-            }}
-          >
-            Join our Discord community for real-time support from the team and fellow archivists.
-          </Typography>
+
         </Box>
       </Container>
     </Box>

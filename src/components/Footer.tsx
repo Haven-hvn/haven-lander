@@ -19,7 +19,7 @@ const footerLinks = {
   product: [
     { label: 'Features', href: '#features' },
     { label: 'Technology', href: '#tech-stack' },
-    { label: 'Pricing', href: '#comparison' },
+    { label: 'Pricing', href: 'https://filecoin.cloud/service-providers' },
     { label: 'FAQ', href: '#faq' },
   ],
   resources: [
@@ -29,10 +29,7 @@ const footerLinks = {
     { label: 'Status', href: 'https://haven.orbiter.website/' },
   ],
   community: [
-    { label: 'Discord', href: '#' },
-    { label: 'Twitter', href: '#' },
-    { label: 'Blog', href: '#' },
-    { label: 'Forum', href: '#' },
+    { label: 'Twitter', href: 'https://x.com/havenplay3r' },
   ],
   legal: [
     { label: 'Privacy Policy', href: '#' },
@@ -43,8 +40,7 @@ const footerLinks = {
 
 const socialLinks = [
   { icon: GitHubIcon, href: 'https://github.com/Haven-hvn/', label: 'GitHub' },
-  { icon: TwitterIcon, href: '#', label: 'Twitter' },
-  { icon: DiscordIcon, href: '#', label: 'Discord' },
+  { icon: TwitterIcon, href: 'https://x.com/havenplay3r', label: 'Twitter' },
   { icon: DocsIcon, href: 'https://github.com/Haven-hvn/haven-player/blob/pluginsystem/docs/plans/ARCHITECTURE.md', label: 'Documentation' },
 ];
 

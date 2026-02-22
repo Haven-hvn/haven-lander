@@ -8,7 +8,6 @@ import {
 } from '@mui/material';
 import {
   Warning as WarningIcon,
-  CheckCircle as CheckIcon,
 } from '@mui/icons-material';
 import { liquidGlassTokens } from '@/styles/theme';
 import GlassCard from './GlassCard';

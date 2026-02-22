@@ -286,7 +286,7 @@ const LiveStatsSection: React.FC = () => {
               mb: 2,
             }}
           >
-            Trusted by Archivists Worldwide
+            Ecosystem at a Glance
           </Typography>
           <Typography
             variant="body1"
@@ -296,8 +296,8 @@ const LiveStatsSection: React.FC = () => {
               mx: 'auto',
             }}
           >
-            Real-time metrics from the Haven network. Watch as the ecosystem grows 
-            and see the decentralization in action.
+            Real-time activity across the networks that Haven is built upon.
+            These metrics reflect the growing adoption of decentralized infrastructure.
           </Typography>
           
           {/* Refresh Button */}

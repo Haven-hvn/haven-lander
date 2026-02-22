@@ -274,8 +274,8 @@ const HeroSection: FC<HeroSectionProps> = () => {
                 {[
                   { angle: 0, label: 'Wallet', color: liquidGlassTokens.neon.cyan, icon: '🔐' },
                   { angle: 72, label: 'Encrypt', color: liquidGlassTokens.neon.magenta, icon: '🔒' },
-                  { angle: 144, label: 'IPFS', color: liquidGlassTokens.neon.amber, icon: '📦' },
-                  { angle: 216, label: 'Filecoin', color: liquidGlassTokens.neon.success, icon: '⛓️' },
+                  { angle: 144, label: 'Verify', color: liquidGlassTokens.neon.amber, icon: '✅' },
+                  { angle: 216, label: 'Store', color: liquidGlassTokens.neon.success, icon: '💾' },
                   { angle: 288, label: 'Stream', color: liquidGlassTokens.neon.cyan, icon: '▶️' },
                 ].map((node, index) => {
                   const radius = 120;

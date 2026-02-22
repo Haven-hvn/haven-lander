@@ -457,7 +457,7 @@ const LiveStatsSection: React.FC = () => {
             },
             { 
               label: 'USDFC Locked', 
-              value: filecoin.data.totalUSDFCLocked 
+              value: filecoin.data.totalUSDFCLocked || '--'
             },
             { 
               label: 'Active Archives', 
@@ -465,7 +465,9 @@ const LiveStatsSection: React.FC = () => {
             },
             { 
               label: 'Network Uptime', 
-              value: `${lit.data.uptime}%` 
+              value: lit.error || lit.data.uptime === 0 
+                ? '--' 
+                : `${lit.data.uptime}%` 
             },
           ].map((metric, index) => (
             <Box key={index} sx={{ textAlign: 'center', px: 2 }}>

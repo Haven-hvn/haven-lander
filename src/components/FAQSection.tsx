@@ -37,7 +37,7 @@ const faqData: FAQItem[] = [
   },
   {
     question: 'Is my content really private?',
-    answer: 'Absolutely. With client-side encryption, your content is encrypted before upload using keys that only you control. The encrypted data is distributed across the IPFS/Filecoin network, but without your authorization, it remains unreadable. This is true zero-knowledge architecture.',
+    answer: 'Absolutely. With client-side encryption, your content is encrypted before upload using keys that only you control. The encrypted data is stored on a verifiable network where its location and integrity are constantly proven, but without your authorization, it remains unreadable. This is true zero-knowledge architecture.',
   },
   {
     question: 'What video formats are supported?',

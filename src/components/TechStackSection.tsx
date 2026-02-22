@@ -42,9 +42,9 @@ const techStack: TechComponent[] = [
   {
     icon: StorageIcon,
     title: 'Storage',
-    description: 'Content is distributed across the IPFS network and stored on Filecoin for permanent, censorship-resistant archiving.',
+    description: 'Data is stored on a verifiable foundation where its location and integrity are constantly proven. Access to storage is direct, connecting straight to the global network without middlemen.',
     color: liquidGlassTokens.neon.amber,
-    tech: 'IPFS + Filecoin',
+    tech: 'Filecoin Network',
   },
   {
     icon: SearchIcon,

@@ -70,10 +70,10 @@ export const liquidGlassTokens = {
   
   // Border Radius
   radius: {
-    sm: 8,
-    md: 12,
-    lg: 16,
-    xl: 24,
+    sm: 4,
+    md: 6,
+    lg: 8,
+    xl: 12,
   },
 };
 
@@ -237,7 +237,7 @@ export const liquidGlassTheme = createTheme({
     },
   },
   shape: {
-    borderRadius: 12,
+    borderRadius: 8,
   },
   spacing: 8,
   components: {

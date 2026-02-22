@@ -24,7 +24,7 @@ interface ComparisonRow {
   feature: string;
   haven: boolean | 'partial';
   googleDrive: boolean | 'partial';
-  youtube: boolean | 'partial';
+  localDrive: boolean | 'partial';
   highlight?: boolean;
 }
 
@@ -33,52 +33,73 @@ const comparisonData: ComparisonRow[] = [
     feature: 'Censorship Resistant',
     haven: true,
     googleDrive: false,
-    youtube: false,
+    localDrive: true,
     highlight: true,
   },
   {
     feature: 'You Own Your Data',
     haven: true,
     googleDrive: false,
-    youtube: false,
+    localDrive: true,
     highlight: true,
   },
   {
     feature: 'Client-Side Encryption',
     haven: true,
     googleDrive: 'partial',
-    youtube: false,
+    localDrive: false,
+    highlight: true,
+  },
+  {
+    feature: 'Global Reach & Shareable',
+    haven: true,
+    googleDrive: true,
+    localDrive: false,
     highlight: true,
   },
   {
     feature: 'No Account Required',
     haven: true,
     googleDrive: false,
-    youtube: false,
+    localDrive: true,
   },
   {
-    feature: 'Portable Data',
-    haven: true,
-    googleDrive: 'partial',
-    youtube: false,
-  },
-  {
-    feature: 'Risk of Deplatforming',
+    feature: 'Access Without Internet',
     haven: false,
+    googleDrive: false,
+    localDrive: true,
+  },
+  {
+    feature: 'Automatic Redundancy / Backup',
+    haven: true,
     googleDrive: true,
-    youtube: true,
+    localDrive: false,
+    highlight: true,
+  },
+  {
+    feature: 'No Risk of Deplatforming',
+    haven: true,
+    googleDrive: false,
+    localDrive: true,
   },
   {
     feature: 'Transparent Pricing',
     haven: true,
     googleDrive: 'partial',
-    youtube: true,
+    localDrive: true,
   },
   {
     feature: 'Open Source',
     haven: true,
     googleDrive: false,
-    youtube: false,
+    localDrive: false,
+  },
+  {
+    feature: 'No Hardware to Maintain',
+    haven: true,
+    googleDrive: true,
+    localDrive: false,
+    highlight: true,
   },
 ];
 
@@ -240,7 +261,7 @@ const ComparisonSection: React.FC = () => {
                       width: isMobile ? '20%' : '16.66%',
                     }}
                   >
-                    Drive
+                    Google Drive
                   </TableCell>
                   <TableCell
                     align="center"
@@ -251,7 +272,7 @@ const ComparisonSection: React.FC = () => {
                       width: isMobile ? '20%' : '16.66%',
                     }}
                   >
-                    YouTube
+                    Local Drive
                   </TableCell>
                 </TableRow>
               </TableHead>
@@ -307,7 +328,7 @@ const ComparisonSection: React.FC = () => {
                         py: 2,
                       }}
                     >
-                      <StatusIcon status={row.youtube} />
+                      <StatusIcon status={row.localDrive} />
                     </TableCell>
                   </TableRow>
                 ))}

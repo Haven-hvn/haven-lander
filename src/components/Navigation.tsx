@@ -227,7 +227,7 @@ const Navigation: React.FC<NavigationProps> = ({ onScrollToSection }) => {
               },
             }}
           >
-            Join the Reclamation
+            Explore Our Projects
           </Button>
 
           {/* Mobile Menu Button */}

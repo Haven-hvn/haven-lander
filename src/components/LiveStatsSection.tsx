@@ -464,10 +464,16 @@ const LiveStatsSection: React.FC = () => {
               value: '100+' 
             },
             { 
-              label: 'Network Uptime', 
-              value: lit.error || lit.data.uptime === 0 
-                ? '--' 
-                : `${lit.data.uptime}%` 
+              label: 'Data Sovereignty', 
+              value: '100%' 
+            },
+            { 
+              label: 'SelfHosted Instances', 
+              value: '15+' 
+            },
+            { 
+              label: 'Local Operations', 
+              value: '10k+' 
             },
           ].map((metric, index) => (
             <Box key={index} sx={{ textAlign: 'center', px: 2 }}>

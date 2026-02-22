@@ -282,7 +282,7 @@ const PainPointsSection: React.FC = () => {
               color: 'white',
             }}
           >
-            Join the Reclamation
+            Explore Open Source
           </Typography>
           <Typography
             variant="body1"

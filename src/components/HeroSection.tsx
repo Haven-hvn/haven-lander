@@ -45,42 +45,6 @@ const HeroSection: FC<HeroSectionProps> = () => {
         >
           {/* Left Content */}
           <Box sx={{ flex: 1, maxWidth: 680 }}>
-            {/* Badge */}
-            <Box
-              sx={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: 1,
-                px: 2,
-                py: 0.75,
-                mb: 4,
-                borderRadius: 20,
-                background: `linear-gradient(135deg, ${liquidGlassTokens.neon.cyan}15 0%, ${liquidGlassTokens.neon.magenta}10 100%)`,
-                border: `1px solid ${liquidGlassTokens.neon.cyan}30`,
-              }}
-            >
-              <Box
-                sx={{
-                  width: 8,
-                  height: 8,
-                  borderRadius: '50%',
-                  background: liquidGlassTokens.neon.success,
-                  boxShadow: `0 0 8px ${liquidGlassTokens.neon.success}`,
-                  animation: 'pulse-glow 2s ease-in-out infinite',
-                }}
-              />
-              <Typography
-                variant="caption"
-                sx={{
-                  color: liquidGlassTokens.neon.cyan,
-                  fontWeight: 500,
-                  letterSpacing: '0.05em',
-                }}
-              >
-                Reclaim the Internet
-              </Typography>
-            </Box>
-
             {/* Headline */}
             <Typography
               variant="h1"
@@ -143,7 +107,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
                   },
                 }}
               >
-                Reclaim Your Data
+                Start Uploading
               </Button>
 
               <Button
@@ -372,7 +336,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
                 ))}
               </Box>
 
-              {/* Status Bar */}
+              {/* Status Bar - LocalFirst Philosophy Metrics */}
               <Box
                 sx={{
                   mt: 3,
@@ -381,40 +345,111 @@ const HeroSection: FC<HeroSectionProps> = () => {
                   background: 'rgba(0, 0, 0, 0.3)',
                   border: `1px solid ${liquidGlassTokens.glass.border}`,
                   display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
+                  flexDirection: 'column',
+                  gap: 1.5,
                 }}
               >
-                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
-                  <Box
-                    sx={{
-                      width: 8,
-                      height: 8,
-                      borderRadius: '50%',
-                      background: liquidGlassTokens.neon.success,
-                      boxShadow: `0 0 8px ${liquidGlassTokens.neon.success}`,
-                      animation: 'pulse-glow 2s ease-in-out infinite',
-                    }}
-                  />
+                {/* Data Sovereign */}
+                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+                    <Box
+                      sx={{
+                        width: 8,
+                        height: 8,
+                        borderRadius: '50%',
+                        background: liquidGlassTokens.neon.success,
+                        boxShadow: `0 0 8px ${liquidGlassTokens.neon.success}`,
+                      }}
+                    />
+                    <Typography
+                      variant="caption"
+                      sx={{
+                        color: `rgba(255, 255, 255, ${liquidGlassTokens.text.secondary})`,
+                        fontWeight: 500,
+                      }}
+                    >
+                      Data Sovereign
+                    </Typography>
+                  </Box>
                   <Typography
                     variant="caption"
                     sx={{
-                      color: `rgba(255, 255, 255, ${liquidGlassTokens.text.secondary})`,
-                      fontWeight: 500,
+                      color: liquidGlassTokens.neon.cyan,
+                      fontWeight: 600,
                     }}
                   >
-                    Network Online
+                    100%
                   </Typography>
                 </Box>
-                <Typography
-                  variant="caption"
-                  sx={{
-                    color: liquidGlassTokens.neon.cyan,
-                    fontWeight: 600,
-                  }}
-                >
-                  99.6% Uptime
-                </Typography>
+
+                {/* SelfHosted */}
+                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+                    <Box
+                      sx={{
+                        width: 8,
+                        height: 8,
+                        borderRadius: '50%',
+                        background: liquidGlassTokens.neon.amber,
+                        boxShadow: `0 0 8px ${liquidGlassTokens.neon.amber}`,
+                      }}
+                    />
+                    <Typography
+                      variant="caption"
+                      sx={{
+                        color: `rgba(255, 255, 255, ${liquidGlassTokens.text.secondary})`,
+                        fontWeight: 500,
+                      }}
+                    >
+                      SelfHosted
+                    </Typography>
+                  </Box>
+                  <Typography
+                    variant="caption"
+                    sx={{
+                      color: liquidGlassTokens.neon.amber,
+                      fontWeight: 600,
+                    }}
+                  >
+                    15+
+                  </Typography>
+                </Box>
+
+                {/* LocalFirst */}
+                <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                  <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+                    <Box
+                      sx={{
+                        width: 8,
+                        height: 8,
+                        borderRadius: '50%',
+                        background: liquidGlassTokens.neon.magenta,
+                        boxShadow: `0 0 8px ${liquidGlassTokens.neon.magenta}`,
+                      }}
+                    />
+                    <Typography
+                      variant="caption"
+                      sx={{
+                        color: `rgba(255, 255, 255, ${liquidGlassTokens.text.secondary})`,
+                        fontWeight: 500,
+                      }}
+                    >
+                      LocalFirst
+                    </Typography>
+                  </Box>
+                  <Typography
+                    variant="caption"
+                    sx={{
+                      color: liquidGlassTokens.neon.magenta,
+                      fontWeight: 600,
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 0.5,
+                    }}
+                  >
+                    ✓ Verified
+                  </Typography>
+                </Box>
               </Box>
             </HeroCard>
 

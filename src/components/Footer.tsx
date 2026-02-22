@@ -23,10 +23,10 @@ const footerLinks = {
     { label: 'FAQ', href: '#faq' },
   ],
   resources: [
-    { label: 'Documentation', href: '#' },
-    { label: 'GitHub', href: '#' },
-    { label: 'API Reference', href: '#' },
-    { label: 'Status', href: '#' },
+    { label: 'Documentation', href: 'https://github.com/Haven-hvn/haven-player/blob/pluginsystem/docs/plans/ARCHITECTURE.md' },
+    { label: 'GitHub', href: 'https://github.com/Haven-hvn/' },
+    { label: 'Releases', href: 'https://github.com/Haven-hvn/haven-cli/releases' },
+    { label: 'Status', href: 'https://haven.orbiter.website/' },
   ],
   community: [
     { label: 'Discord', href: '#' },
@@ -42,10 +42,10 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: GitHubIcon, href: '#', label: 'GitHub' },
+  { icon: GitHubIcon, href: 'https://github.com/Haven-hvn/', label: 'GitHub' },
   { icon: TwitterIcon, href: '#', label: 'Twitter' },
   { icon: DiscordIcon, href: '#', label: 'Discord' },
-  { icon: DocsIcon, href: '#', label: 'Documentation' },
+  { icon: DocsIcon, href: 'https://github.com/Haven-hvn/haven-player/blob/pluginsystem/docs/plans/ARCHITECTURE.md', label: 'Documentation' },
 ];
 
 const Footer: React.FC = () => {

@@ -468,12 +468,12 @@ const LiveStatsSection: React.FC = () => {
               value: '100%' 
             },
             { 
-              label: 'SelfHosted Instances', 
-              value: '15+' 
+              label: 'Self-Hosting Capability', 
+              value: '✓ Enabled' 
             },
             { 
-              label: 'Local Operations', 
-              value: '10k+' 
+              label: 'Local Processing', 
+              value: '✓ Native' 
             },
           ].map((metric, index) => (
             <Box key={index} sx={{ textAlign: 'center', px: 2 }}>

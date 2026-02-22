@@ -16,6 +16,7 @@ import {
 } from '@mui/material';
 import { Menu as MenuIcon } from '@mui/icons-material';
 import { liquidGlassTokens, glowEffects } from '@/styles/theme';
+import { openExternalLink } from '@/utils/links';
 
 interface NavigationProps {
   onScrollToSection: (id: string) => void;
@@ -209,7 +210,7 @@ const Navigation: React.FC<NavigationProps> = ({ onScrollToSection }) => {
           {/* CTA Button */}
           <Button
             variant="contained"
-            onClick={() => handleNavClick('hero')}
+            onClick={() => openExternalLink('https://github.com/Haven-hvn/')}
             sx={{
               background: `linear-gradient(135deg, ${liquidGlassTokens.neon.cyan}20 0%, ${liquidGlassTokens.neon.cyan}10 100%)`,
               border: `1px solid ${liquidGlassTokens.neon.cyan}40`,

@@ -1,5 +1,6 @@
 
 import { type FC, Fragment } from 'react';
+import { openExternalLink } from '@/utils/links';
 import {
   Box,
   Typography,
@@ -89,6 +90,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
                 variant="contained"
                 size="large"
                 endIcon={<ArrowIcon />}
+                onClick={() => openExternalLink('https://github.com/Haven-hvn/haven-cli/releases')}
                 sx={{
                   background: `linear-gradient(135deg, ${liquidGlassTokens.neon.cyan}25 0%, ${liquidGlassTokens.neon.cyan}15 100%)`,
                   border: `1px solid ${liquidGlassTokens.neon.cyan}50`,
@@ -114,6 +116,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
                 variant="outlined"
                 size="large"
                 startIcon={<PlayIcon />}
+                onClick={() => openExternalLink('https://haven.orbiter.website/')}
                 sx={{
                   borderColor: 'rgba(255, 255, 255, 0.2)',
                   color: 'white',
@@ -136,6 +139,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
                 variant="text"
                 size="large"
                 startIcon={<DocsIcon />}
+                onClick={() => openExternalLink('https://github.com/Haven-hvn/haven-player/blob/pluginsystem/docs/plans/ARCHITECTURE.md')}
                 sx={{
                   color: `rgba(255, 255, 255, ${liquidGlassTokens.text.tertiary})`,
                   fontWeight: 500,
@@ -368,7 +372,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
                         fontWeight: 500,
                       }}
                     >
-                      Data Sovereign
+                      Data Sovereignty
                     </Typography>
                   </Box>
                   <Typography
@@ -401,7 +405,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
                         fontWeight: 500,
                       }}
                     >
-                      SelfHosted
+                      Self-Hosting
                     </Typography>
                   </Box>
                   <Typography
@@ -411,7 +415,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
                       fontWeight: 600,
                     }}
                   >
-                    15+
+                    ✓ Enabled
                   </Typography>
                 </Box>
 
@@ -434,7 +438,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
                         fontWeight: 500,
                       }}
                     >
-                      LocalFirst
+                      Local-First
                     </Typography>
                   </Box>
                   <Typography
@@ -447,7 +451,7 @@ const HeroSection: FC<HeroSectionProps> = () => {
                       gap: 0.5,
                     }}
                   >
-                    ✓ Verified
+                    ✓ By Design
                   </Typography>
                 </Box>
               </Box>

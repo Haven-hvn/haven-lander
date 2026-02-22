@@ -64,9 +64,9 @@ const comparisonData: ComparisonRow[] = [
     localDrive: true,
   },
   {
-    feature: 'Access Without Internet',
-    haven: false,
-    googleDrive: false,
+    feature: 'Offline-First Access',
+    haven: true,
+    googleDrive: 'partial',
     localDrive: true,
   },
   {

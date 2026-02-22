@@ -10,7 +10,6 @@ import {
 import {
   GitHub as GitHubIcon,
   Twitter as TwitterIcon,
-  Message as DiscordIcon,
   Description as DocsIcon,
 } from '@mui/icons-material';
 import { liquidGlassTokens, glowEffects } from '@/styles/theme';

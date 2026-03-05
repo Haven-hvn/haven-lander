@@ -23,7 +23,7 @@ jobs:
 
       - name: Build Vite app
         env:
-          VITE_LIT_STATUS_API_KEY: ${{ secrets.VITE_LIT_STATUS_API_KEY }}
+          LIT_STATUS_API_KEY: ${{ secrets.LIT_STATUS_API_KEY }}
         run: |
           echo "Building Vite application..."
           npm run build
